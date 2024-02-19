@@ -5,7 +5,7 @@ import { useUser } from '@clerk/nextjs';
 import { addDoc, collection, doc, serverTimestamp, updateDoc } from 'firebase/firestore';
 import { useState } from 'react';
 import DropzoneComponent from 'react-dropzone'
-import { db, storage } from '../firebase';
+import { db, storage } from '../../firebase';
 import { getDownloadURL, ref, uploadBytes } from 'firebase/storage';
 import toast from 'react-hot-toast';
 
@@ -40,7 +40,7 @@ function Dropzone() {
             filename: selectedFile.name,
             fullName: user.fullName,
             profileImg: user.imageUrl,
-            timestamp: serverTimestamp(),
+            timesStamp: serverTimestamp(),
             type: selectedFile.type,
             size: selectedFile.size,
         })

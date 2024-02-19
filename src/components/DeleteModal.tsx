@@ -10,9 +10,9 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog"
-import { useAppStore } from "../store/store"
+import { useAppStore } from "../../store/store"
 import { useUser } from "@clerk/nextjs"
-import { db, storage } from "../firebase"
+import { db, storage } from "../../firebase"
 import { deleteObject, ref } from "firebase/storage"
 import { deleteDoc, doc } from "firebase/firestore"
 import toast from 'react-hot-toast';

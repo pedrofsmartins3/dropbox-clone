@@ -1,7 +1,7 @@
 "use client"
 
 import { useUser } from "@clerk/nextjs"
-import { useAppStore } from "../store/store"
+import { useAppStore } from "../../store/store"
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import {
@@ -15,7 +15,7 @@ import {
 } from "@/components/ui/dialog"
 import { Input } from "@/components/ui/input"
 import { doc, updateDoc } from "firebase/firestore"
-import { db } from "../firebase"
+import { db } from "../../firebase"
 import toast from 'react-hot-toast';
 
 

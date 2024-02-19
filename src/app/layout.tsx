@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { ClerkProvider } from '@clerk/nextjs'
 import "./globals.css";
-import Header from "../../components/Header";
-import { ThemeProvider } from "../../components/ThemeProvider";
+import Header from "../components/Header";
+import { ThemeProvider } from "../components/ThemeProvider";
 import { Toaster } from 'react-hot-toast';
 
 const inter = Inter({ subsets: ["latin"] });

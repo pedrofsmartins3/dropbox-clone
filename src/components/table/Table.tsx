@@ -15,10 +15,10 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table"
-import { FileType } from "../../typings"
+import { FileType } from "../../../typings"
 import { Button } from "../ui/button"
 import { PencilIcon, TrashIcon } from "lucide-react"
-import { useAppStore } from "../../store/store"
+import { useAppStore } from "../../../store/store"
 import { DeleteModal } from "../DeleteModal"
 import RenameModal from "../RenameModal"
 
@@ -92,7 +92,7 @@ export function DataTable<TData, TValue>({
                 <RenameModal />
                 {row.getVisibleCells().map((cell) => (
                   <TableCell key={cell.id}>
-                    {cell.column.id === "timestamp" ? ( 
+                    {cell.column.id === "timesStamp" ? ( 
                         <div className="flex flex-col">
                           <div className="text-sm">
                             {(cell.getValue() as Date).toLocaleDateString()}

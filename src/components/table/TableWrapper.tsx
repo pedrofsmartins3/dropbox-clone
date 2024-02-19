@@ -1,14 +1,14 @@
 'use client'
 
 import React, { useEffect } from 'react'
-import { FileType } from '../../typings'
+import { FileType } from '../../../typings'
 import { Button } from '../ui/button'
 import { DataTable } from './Table'
 import { columns } from './columns'
 import { useUser } from '@clerk/nextjs'
 import { useCollection } from "react-firebase-hooks/firestore";
 import { collection, orderBy, query } from 'firebase/firestore'
-import { db } from '../../firebase'
+import { db } from '../../../firebase'
 import { Skeleton } from "@/components/ui/skeleton"
 
 function TableWrapper({ skeletonFiles }: { skeletonFiles: FileType[]}) {
@@ -22,7 +22,7 @@ function TableWrapper({ skeletonFiles }: { skeletonFiles: FileType[]}) {
     user && 
       query(
         collection(db, "users", user.id, "files"),
-        orderBy("timestamp", sort)
+        orderBy("timesStamp", sort)
       )
   );
 
@@ -32,7 +32,7 @@ function TableWrapper({ skeletonFiles }: { skeletonFiles: FileType[]}) {
     const files: FileType[] = docs.docs.map((doc) => ({
       id: doc.id,
       filename: doc.data().filename || doc.id,
-      timestamp: new Date(doc.data().timestamp?.seconds * 1000) || undefined,
+      timesStamp: new Date(doc.data().timesStamp?.seconds * 1000) || undefined,
       fullName: doc.data().fullName,
       downloadURL: doc.data().downloadURL,
       type: doc.data().type,

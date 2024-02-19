@@ -1,10 +1,10 @@
 "use client"
 
 import { ColumnDef } from "@tanstack/react-table"
-import { FileType } from "../../typings"
+import { FileType } from "../../../typings"
 import prettyBytes from "pretty-bytes"
 import { FileIcon, defaultStyles } from 'react-file-icon'
-import { COLOR_EXTENSION_MAP } from "../../constant"
+import { COLOR_EXTENSION_MAP } from "../../../constant"
 
 export const columns: ColumnDef<FileType>[] = [
   {
@@ -19,7 +19,7 @@ export const columns: ColumnDef<FileType>[] = [
                     extension={extension}
                     labelColor={COLOR_EXTENSION_MAP[extension]}
                     // "@ts-ignore"
-                    {...defaultStyles[extension]}
+                    // {...defaultStyles[extension]}
                 />
             </div>
         )
@@ -30,7 +30,7 @@ export const columns: ColumnDef<FileType>[] = [
     header: "Filename",
   },
   {
-    accessorKey: "timestamp",
+    accessorKey: "timesStamp",
     header: "Date Added",
   },
   {
