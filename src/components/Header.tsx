@@ -1,27 +1,26 @@
 import Link from "next/link"
 import Image from "next/image"
-import "./Header.css"
 import { SignInButton, SignedOut, UserButton } from "@clerk/nextjs"
 import { ThemeToggler } from "./ThemeToggler"
 
 function Header() {
   return (
-    <header className="header">
-        <Link href="/" className="flex items-center gap-3">
-            <div className="header_logo_img">
+    <header className="flex items-center justify-between">
+        <Link href="/" className="flex items-center space-x-2">
+            <div className="bg-[blue] w-fit">
                 <Image 
                     src="https://www.shareicon.net/download/2016/07/13/606936_dropbox_2048x2048.png"
                     alt="logo"
-                    className="header_logo_img_Image"
-                    height={50}
-                    width={50}
+                    className="invert"
+                    height={55}
+                    width={55}
                 />
             </div>
-            <h1 className="font-bold text-2xl">Dropbox</h1>
+            <h1 className="font-bold text-2xl">Dropbox Clone</h1>
         </Link>
 
 
-        <div className="header_right">
+        <div className="flex items-center space-x-3 mr-2 lg:mr-5">
           <ThemeToggler />
 
           <UserButton afterSignOutUrl="/"/>
